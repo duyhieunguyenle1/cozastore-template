@@ -46,8 +46,8 @@ const Footer = () => {
                     <div className='md:flex-[1_1_50%] lg:flex-1 px-4 pb-12'>
                         <h4 className='uppercase font-bold pb-7 leading-relaxed'>Get in touch</h4>
                         <p className='text-sm opacity-70 md:max-w-[270px] lg:max-w-none'>
-                            Any questions? Let us know in store at 8th floor, 379 Hudson St, New York,
-                            NY 10018 or call us on (+1 px-4 pb-12) 96 716 6879
+                            Any questions? Let us know in store at 2nd floor, 2 Hai Ba Trung, Hanoi,
+                            VN or call us on (+84) 96 743 xxxx
                         </p>
                         <div className='flex pt-7'>
                             {getInTouchFooter.map((item, index) => (
