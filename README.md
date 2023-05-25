@@ -8,7 +8,9 @@ delete cart...)
 ✨ Fully Responsive \
 ✨ Modern UI Design \
 ✨ Styled with TailwindCSS \
-✨ React Router v6
+✨ React Router v6 \
+✨ Cart (Add,delete,...)
+
 
 ## Future Features
 
