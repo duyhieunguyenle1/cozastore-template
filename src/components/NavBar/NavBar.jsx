@@ -2,7 +2,8 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { IoMdCart } from 'react-icons/io'
 import { HiOutlineMenu } from 'react-icons/hi'
-import { AiOutlineSearch, AiOutlineClose, AiOutlineHeart } from 'react-icons/ai'
+import { VscSignIn } from "react-icons/vsc";
+import { AiOutlineClose, AiOutlineHeart } from 'react-icons/ai'
 import { SidebarContext } from '../../contexts/SidebarContext';
 import { NavBarContext } from '../../contexts/NavBarContext';
 import { logo } from '../../index'
@@ -78,7 +79,7 @@ const NavBar = () => {
                 </div>
                 <div className='h-full flex flex-1 items-center justify-end'>
                     <button className='pr-[11px] pl-[22px]'>
-                        <AiOutlineSearch className='text-xl md:text-4xl lg:text-2xl' />
+                        <VscSignIn className='text-xl md:text-4xl lg:text-2xl' />
                     </button>
                     <button onClick={() => setIsMenuOpen(!isMenuOpen)} className='relative pr-[11px] pl-[22px]'>
                         <IoMdCart className='text-xl md:text-4xl lg:text-2xl' />
