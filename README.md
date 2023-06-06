@@ -14,7 +14,7 @@ delete cart...)
 
 ## Future Features
 
-Login authentication, post/patch/delete data (might be)...
+Login authentication, post/patch/delete data...
 
 ## Built with
 
