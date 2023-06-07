@@ -40,7 +40,7 @@ $ cd cozastore-template
 ### 2. Run the app
 
 ```
-$ npm install && yarn dev 
+$ yarn install && yarn dev 
 ```
 
 The app will run in the development mode.
