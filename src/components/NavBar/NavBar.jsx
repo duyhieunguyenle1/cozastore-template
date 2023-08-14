@@ -7,14 +7,17 @@ import { AiOutlineClose, AiOutlineHeart } from 'react-icons/ai'
 import { SidebarContext } from '../../contexts/SidebarContext';
 import { NavBarContext } from '../../contexts/NavBarContext';
 import { logo } from '../../index'
-import { NavMenu, SideBar } from '../index'
+import { NavMenu, SideBar, DropdownBar } from '../index'
 import { CartContext } from '../../contexts/CartContext'
+import { useAuth0 } from "@auth0/auth0-react";
+
 
 const NavBar = () => {
     const [stickyBar, setStickyBar] = useState(false)
     const { isMenuOpen, setIsMenuOpen } = useContext(SidebarContext)
     const { isNavOpen, setIsNavOpen, heartAmount, setHeartAmount } = useContext(NavBarContext)
     const { itemAmount } = useContext(CartContext)
+    const { isAuthenticated, loginWithPopup, logout, user } = useAuth0()
 
     const links = [
         {
@@ -57,7 +60,7 @@ const NavBar = () => {
 
 
     return (
-        <nav className={`z-50 w-full bg-gray-50 shadow ${stickyBar || currentURL != '/' ? 'fixed' : 'absolute lg:bg-transparent lg:shadow-none'} 
+        <nav className={`z-50 w-full bg-gray-50 shadow ${stickyBar || currentURL != '/' ? 'fixed top-0 left-0' : 'absolute lg:bg-transparent lg:shadow-none'} 
         transition-all duration-300 `}>
             <div className='h-[84px] mx-auto px-8  lg:px-4 flex flex-row items-center max-w-screen-xl'>
                 <div className='mr-5'>
@@ -78,18 +81,18 @@ const NavBar = () => {
                     </div>
                 </div>
                 <div className='h-full flex flex-1 items-center justify-end'>
-                    <button className='pr-[11px] pl-[22px]'>
-                        <VscSignIn className='text-xl md:text-4xl lg:text-2xl' />
-                    </button>
-                    <button onClick={() => setIsMenuOpen(!isMenuOpen)} className='relative pr-[11px] pl-[22px]'>
-                        <IoMdCart className='text-xl md:text-4xl lg:text-2xl' />
+                    <Link to={'#'} className='pr-[11px] pl-[22px]'>
+                        {!isAuthenticated && <VscSignIn className='text-xl md:text-4xl lg:text-3xl' onClick={() => loginWithPopup()} />}
+                    </Link>
+                    <button onClick={() => setIsMenuOpen(!isMenuOpen)} className='relative hidden md:inline-block pr-[11px] pl-[22px]'>
+                        <IoMdCart className='text-xl md:text-4xl lg:text-3xl' />
                         <div className='bg-button absolute right-1 -top-1 text-[10px] w-[14px] h-[14px] 
                         text-white flex justify-center items-center'>
                             {itemAmount}
                         </div>
                     </button>
                     <button className='relative pr-[11px] pl-[22px]'>
-                        <AiOutlineHeart className='text-xl md:text-4xl lg:text-2xl' />
+                        <AiOutlineHeart className='text-xl md:text-4xl lg:text-3xl' />
                         <div className='bg-button absolute right-1 -top-1 text-[10px] w-[14px] h-[14px] 
                         text-white flex justify-center items-center'>
                             {heartAmount}
@@ -98,6 +101,7 @@ const NavBar = () => {
                     <button onClick={() => setIsNavOpen(!isNavOpen)} className='text-xl md:text-4xl lg:hidden pr-[11px] pl-[22px]'>
                         {isNavOpen ? <AiOutlineClose /> : <HiOutlineMenu />}
                     </button>
+                    {user && <DropdownBar />}
                 </div>
             </div>
             <NavMenu links={links} />

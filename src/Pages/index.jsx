@@ -7,6 +7,8 @@ import ShopPage from "./ShopPage";
 import ProductPage from "./ProductPage";
 import BlogDetailPage from "./BlogDetailPage";
 import BlogPage from "./BlogPage";
+import LoginPage from "./LoginPage";
+import ProfilePage from "./ProfilePage";
 import ErrorPage from "./ErrorPage";
 
 export {
@@ -19,6 +21,8 @@ export {
     ErrorPage,
     ProductPage,
     BlogPage,
-    BlogDetailPage
+    BlogDetailPage,
+    LoginPage,
+    ProfilePage
 }
 

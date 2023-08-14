@@ -38,6 +38,7 @@ export default {
       primary: ['Roboto', 'sans-serif'],
     },
     screens: {
+      mn: '540px',
       sm: '640px',
       md: '768px',
       lg: '1024px',

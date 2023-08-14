@@ -1,14 +1,37 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Link } from "react-router-dom";
 import { FaLongArrowAltRight } from "react-icons/fa";
 
 const BlogItem = ({ id, title, category, comment, desc, author, image, release }) => {
     const [isErrorImage, setIsErrorImage] = useState(false)
+    const [isInView, setIsInView] = useState(false)
+    const ref = useRef()
+
+    // create lazy image
+    let callback = (entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                setIsInView(true)
+            }
+        });
+    };
+
+    useEffect(() => {
+        let observer = new IntersectionObserver(callback)
+
+        if (ref?.current) {
+            observer.observe(ref.current)
+        }
+
+        return () => {
+            observer.disconnect()
+        }
+    }, [])
 
     return (
         <div className='pb-16 overflow-hidden'>
             <Link to={`/blog/${id}`} className='relative'>
-                <img src={image} alt="image"
+                <img ref={ref} src={isInView ? image : ''} alt="image"
                     className='hover:scale-110 transition-all duration-1000'
                     onError={() => setIsErrorImage(true)}
                 />

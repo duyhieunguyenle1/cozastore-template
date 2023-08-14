@@ -2,6 +2,7 @@ import NavBar from "./NavBar/NavBar";
 import NavMenu from "./NavBar/NavMenu";
 import SideBar from "./NavBar/SideBar";
 import CartItems from "./NavBar/CartItems";
+import DropdownBar from "./NavBar/DropdownBar";
 import Footer from "./Footer/Footer";
 import BackToTop from "./Footer/BackToTop";
 import Hero from "./HomePage/Hero";
@@ -20,12 +21,16 @@ import AboutHero from "./About/AboutHero";
 import About from "./About/About";
 import Cart from "./Cart/Cart";
 import CartHeader from "./Cart/CartHeader";
+import Login from "./Auth/Login";
+import Profile from "./Auth/Profile";
+import ProtectedRoute from "./Auth/ProtectedRoute";
 import Error from "./ErrorPage/Error";
 
 
 export {
     NavBar,
     SideBar,
+    DropdownBar,
     NavMenu,
     Footer,
     BackToTop,
@@ -46,5 +51,8 @@ export {
     About,
     Cart,
     CartHeader,
+    Login,
+    Profile,
     Error,
+    ProtectedRoute
 }
