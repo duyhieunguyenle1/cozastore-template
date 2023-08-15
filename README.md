@@ -10,11 +10,12 @@ delete cart...)
 ✨ Styled with TailwindCSS \
 ✨ React Router v6 \
 ✨ Cart (Add,delete,...)
+✨ Authentication
 
 
 ## Future Features
 
-Login authentication, post/patch/delete data...
+Add,delete... blog section
 
 ## Built with
 
