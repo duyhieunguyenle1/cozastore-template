@@ -8,7 +8,7 @@ const ProtectedRoute = ({ children }) => {
     const { isAuthenticated, isLoading } = useAuth0()
     const location = useLocation()
 
-    const notify = () => toast('Please continue to login')
+    const notify = () => toast('Please login to continue!!')
 
     return (
         <>
