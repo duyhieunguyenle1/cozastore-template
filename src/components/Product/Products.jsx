@@ -48,10 +48,10 @@ const Products = () => {
                             <h3 className='uppercase font-bold text-4xl'>Product Overview</h3>
                         </div>
                     }
-                    <div className='flex pb-[52px] justify-between flex-wrap'>
-                        <div className='flex my-2 items-center'>
+                    <div className='flex pb-[52px] justify-between flex-wrap gap-3'>
+                        <div className='flex my-2 items-center flex-wrap gap-3'>
                             {filters.map((filter, index) => {
-                                return <button className={`my-1 mr-8 border-b-[1px] hover:opacity-100 
+                                return <button className={`my-1 mr-7 md:mr-8 border-b-[1px] hover:opacity-100 
                                     hover:border-black transition-all duration-300 
                                     ${filter.category === filteredProducts ? 'opacity-100 border-black' : ' border-transparent opacity-70 '}`}
                                     onClick={() => setFilteredProducts(filter.category)} key={index}>
@@ -59,7 +59,7 @@ const Products = () => {
                                 </button>
                             })}
                         </div>
-                        <div className={`my-2 flex items-center justify-end border rounded-sm 
+                        <div className={`my-2 flex items-center justify-center md:justify-end border rounded-sm w-full md:w-auto
                         h-[40px] text-[#888] border-[#e6e6e6] hover:text-white hover:bg-button 
                         cursor-pointer transition-all duration-300 ${isSearchOpen ? 'bg-gray-100' : ''}`}
                             onClick={() => {

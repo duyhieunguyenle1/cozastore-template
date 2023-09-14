@@ -2,50 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
-    h4{
-        @apply text-base;
-    }
-    h3{
-        @apply text-2xl;
-    }
+@layer base {
+  h4 {
+    @apply text-base;
+  }
+  h3 {
+    @apply text-2xl;
+  }
 
-    h2{
-        @apply text-4xl font-semibold;
-    }
+  h2 {
+    @apply text-4xl font-semibold;
+  }
 }
 
-@layer components{
-    .btn{
-        @apply px-10 py-2 hover:bg-black transition-all duration-300 rounded-full uppercase font-semibold
-    }
+@layer components {
+  .btn {
+    @apply px-10 py-2 hover:bg-black transition-all duration-300 rounded-full uppercase font-semibold;
+  }
+}
+
+body {
+  overflow-x: hidden;
 }
 
 .user-info h3 {
-    font-weight: 800;
-    color: grey;
-    margin-top: 2rem;
+  font-weight: 800;
+  color: grey;
+  margin-top: 2rem;
 }
-  
+
 .user-info p {
-    font-size: 1.1rem;
+  font-size: 1.1rem;
 }
 
 .avatar-profile {
-    height: 16rem;
-    width: 16rem;
+  height: 16rem;
+  width: 16rem;
 }
 
 .avatar {
-    display: inline-block;
-    margin-bottom: 0;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
+  display: inline-block;
+  margin-bottom: 0;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
 }
-  
+
 .avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

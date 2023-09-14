@@ -69,7 +69,7 @@ const Footer = () => {
                                 <input onFocus={() => setInputAnimate(true)} onBlur={() => setInputAnimate(false)} className='bg-transparent outline-none' type="text" placeholder='email@example.com' />
                                 <div className={`${inputAnimate ? 'bg-button w-full' : 'bg-gray-600 w-0'} h-[2px] absolute left-0 -bottom-[2px] transition-all duration-500`}></div>
                             </div>
-                            <button className='mt-5 btn bg-button hover:bg-white hover:text-button'>Subscribe</button>
+                            <button className='w-full md:w-auto mt-7 btn bg-button hover:bg-white hover:text-button'>Subscribe</button>
                         </form>
                     </div>
                 </div>
